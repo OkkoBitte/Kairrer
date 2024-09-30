@@ -1,6 +1,18 @@
-#include "lib/nwf.hpp"//              WELCOM TO PROJECT Rairrer
+#include "lib/nwf.hpp"
 #include "lib/cpython.h"
 #include "lib/webm.hpp"
+
+
+/*
+    Welcome to dev manager - Kairrer
+
+    Using program code:
+    
+        Windows| gcc .\main.cpp -o kairrer
+        Linux  | gcc ./main.cpp -o kairrer -lcurl
+
+*/
+
 
 class root {
     public:class path{
@@ -19,7 +31,7 @@ class root {
 int main(int argc, char* arvs[]) {
     root  root;
     root::path path;
-    print(webm::get("https://web-mbg.ru"));
+    
     if (argc < 2) {
         print(path.start_help_str);
     }
@@ -29,9 +41,9 @@ int main(int argc, char* arvs[]) {
 
             if (arg == "init"  ||  arg=="-python" || arg=="-java") {
                 if (arg == "-python"){
-                    int is_python=system("python");
+                    int is_python=system("python3 --version");
                     if (is_python==1){
-
+                        print(webm::get("https://python.org"));
                     }
                     new_dir("lib");
                     new_file("lib/nwf.py",path.lib_pyhon_nwf);
@@ -63,4 +75,3 @@ int main(int argc, char* arvs[]) {
   
     return 0;
 }
-
