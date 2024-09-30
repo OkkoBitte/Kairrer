@@ -1,15 +1,14 @@
 #include <iostream>
 #include "json/json.h"
-#include <windows.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 #include <string> 
 
 void new_dir(const std::string& dirname) {
-    // win32
-    CreateDirectoryA(dirname.c_str(), NULL);
+    std::filesystem::create_directory(dirname);
 }
 
 
