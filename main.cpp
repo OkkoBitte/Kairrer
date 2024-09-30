@@ -8,8 +8,8 @@
 
     Using program code:
     
-        Windows| gcc .\main.cpp -o kairrer
-        Linux  | gcc ./main.cpp -o kairrer -lcurl
+        Windows| g++ .\main.cpp -o kairrer -lcurl
+        Linux  | g++ ./main.cpp -o kairrer -lcurl
 
 */
 
