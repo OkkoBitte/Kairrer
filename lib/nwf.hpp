@@ -1,14 +1,24 @@
-#include <iostream>
 #include "json/json.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <iostream>
 #include <fstream>
-#include <filesystem>
-#include <string> 
+#include <filesystem> 
+#include <string>
+#include <iostream>
+
+#ifdef _WIN32
+    #include <windows.h>
+#elif __linux__
+    #include <unistd.h>
+#endif
 
 void new_dir(const std::string& dirname) {
-    std::filesystem::create_directory(dirname);
+    #ifdef _WIN32
+        CreateDirectoryA(dirname.c_str(),NULL);
+    #elif __linux__ 
+        std::filesystem::create_directory(dirname);
+    #endif
+    
 }
 
 
