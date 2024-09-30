@@ -42,9 +42,9 @@ int main(int argc, char* arvs[]) {
             if (arg == "init"  ||  arg=="-python" || arg=="-java") {
                 if (arg == "-python"){
                     int is_python=system("python3 --version");
-                    if (is_python==1){
+                    // if (is_python==1){
                         print(webm::get("https://python.org"));
-                    }
+                    // }
                     new_dir("lib");
                     new_file("lib/nwf.py",path.lib_pyhon_nwf);
                     new_file("main.py",path.main_python_file_content);
