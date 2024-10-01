@@ -6,17 +6,18 @@
 #include <string>
 #include <iostream>
 
-#ifdef _WIN32
-    #include <windows.h>
-#elif __linux__
+#ifdef __linux__
     #include <unistd.h>
+#elif _WIN32
+    #include <windows.h>
+
 #endif
 
 void new_dir(const std::string& dirname) {
-    #ifdef _WIN32
-        CreateDirectoryA(dirname.c_str(),NULL);
-    #elif __linux__ 
+    #ifdef __linux__
         std::filesystem::create_directory(dirname);
+    #elif _WIN32 
+        CreateDirectoryA(dirname.c_str(),NULL);
     #endif
     
 }

@@ -41,14 +41,14 @@ int main(int argc, char* arvs[]) {
 
             if (arg == "init"  ||  arg=="-python" || arg=="-java") {
                 if (arg == "-python"){
-                    int is_python=system("python3 --version");
+                    // int is_python=system("python3 --version");
                     // if (is_python==1){
-                        print(webm::get("https://python.org"));
+                        webm::get("https://python.org");
                     // }
                     new_dir("lib");
                     new_file("lib/nwf.py",path.lib_pyhon_nwf);
                     new_file("main.py",path.main_python_file_content);
-
+                    break;
                 }
                 else if(arg == "-java"){
                     new_dir("java");
@@ -56,6 +56,7 @@ int main(int argc, char* arvs[]) {
                     new_dir("java/res");
                     new_dir("java/src");
                     new_file("java/src/Main.java",path.main_java_file_content);
+                    break;
                 }
                 else{
                     print("kairrer init Kairrer Projcet");
